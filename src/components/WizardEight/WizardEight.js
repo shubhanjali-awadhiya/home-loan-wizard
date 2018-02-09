@@ -11,9 +11,9 @@ class WizardEight extends Component {
                 <div className="vert-align">
                     <p name="promptText">Have you had a bankruptcy or foreclosure in the past seven years?</p> <br />
                 <div className="row">
-                    <Link to="/wNine"><button value="Has never been in bankruptcy" onClick={ (e)=> this.props.updateHist(e.target.value) }>No</button></Link>
-                    <Link to="/wNine"><button value="Has had bankruptcy before" onClick={ (e)=> this.props.updateHist(e.target.value) }>Bankruptcy</button></Link>
-                    <Link to="/wNine"><button value="Has had a foreclosure before" onClick={ (e)=> this.props.updateHist(e.target.value) }>Foreclosure</button></Link>
+                    <Link to="/wNine"><button value="Has not been in bankruptcy or foreclosure" onClick={ (e)=> this.props.updateHist(e.target.value) }>Neither</button></Link>
+                    <Link to="/wNine"><button value="Has had bankruptcy" onClick={ (e)=> this.props.updateHist(e.target.value) }>Bankruptcy</button></Link>
+                    <Link to="/wNine"><button value="Has had a foreclosure" onClick={ (e)=> this.props.updateHist(e.target.value) }>Foreclosure</button></Link>
                     <Link to="/wNine"><button value="Has had both a foreclosure and a bankruptcy" onClick={ (e)=> this.props.updateHist(e.target.value) }>Both</button></Link>
                 </div>    
                 </div>

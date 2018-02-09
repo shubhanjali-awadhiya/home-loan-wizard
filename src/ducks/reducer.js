@@ -1,10 +1,10 @@
 const initialState = {
-   loanType: 'Home Purchase',
-   propertyType: 'Single Family Home',
+   loanType: '',
+   propertyType: '',
    city: '',
    propToBeUsedOn: '',
-   found: false,
-   realEstateAgent: "false",
+   found: '',
+   realEstateAgent: "",
    cost: 0,
    downPayment: 0,
    credit: '',
@@ -12,7 +12,7 @@ const initialState = {
    addressOne: '',
    addressTwo: '',
    addressThree: '',
-   firstName: 'aa',
+   firstName: '',
    lastName: '',
    email: ''
 }

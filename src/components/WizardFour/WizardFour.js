@@ -11,8 +11,8 @@ class WizardFour extends Component {
                 <div className="vert-align">
                <p name="promptText">Have you already found your new home?</p> <br />
                 <div className="row">
-                    <Link to="/wFive"><button name="yesButton" onClick={ (e)=>this.props.updateFound("True") }>Yes</button></Link>
-                    <Link to="/wFive"><button name="noButton" onClick={ (e)=>this.props.updateFound("False") }>No </button></Link> 
+                    <Link to="/wFive"><button name="yesButton" onClick={ (e)=>this.props.updateFound("Yes") }>Yes</button></Link>
+                    <Link to="/wFive"><button name="noButton" onClick={ (e)=>this.props.updateFound("No") }>No </button></Link> 
                 </div>           
             </div>
         </div>

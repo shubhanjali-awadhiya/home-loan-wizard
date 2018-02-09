@@ -11,10 +11,10 @@ class WizardSeven extends Component {
                 <div className="vert-align">
                     <p name="promptText">Estimate your credit score</p> <br />
                     <div className="row">
-                        <Link to="/wEight"><button value="excellent" onClick={ (e)=>this.props.updateCredit('Excellent') }>Excellent</button></Link>
-                        <Link to="/wEight"><button value="good" onClick={ (e)=>this.props.updateCredit('Good') }>Good</button></Link>
-                        <Link to="/wEight"><button value="fair" onClick={ (e)=>this.props.updateCredit('Fair') }>Fair</button></Link>
-                        <Link to="/wEight"><button value="poor" onClick={ (e)=>this.props.updateCredit('Poor') }>Poor</button></Link>
+                        <Link to="/wEight"><button value="Excellent" onClick={ (e)=>this.props.updateCredit('Excellent') }>Excellent</button></Link>
+                        <Link to="/wEight"><button value="Good" onClick={ (e)=>this.props.updateCredit('Good') }>Good</button></Link>
+                        <Link to="/wEight"><button value="Fair" onClick={ (e)=>this.props.updateCredit('Fair') }>Fair</button></Link>
+                        <Link to="/wEight"><button value="Poor" onClick={ (e)=>this.props.updateCredit('Poor') }>Poor</button></Link>
                     </div>
                 </div>
             </div>

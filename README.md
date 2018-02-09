@@ -1,8 +1,8 @@
 <img src="https://devmounta.in/img/logowhiteblue.png" width="250" align="right">
 
-# Home Loan Design Wizard
+# Home Loan Wizard
 ### Project Requirements
-#### Version 1.4
+#### Version 1.5
 
 ## Introduction
 
@@ -93,8 +93,20 @@
       * Condo
       * Multi Family Dwelling
       * Mobile Home
+    * Possible Errors
+      * "The loan type must be selected from the listed values."
+      * "The property type must be selected from the listed values."
   3. Property location screen
-    * This screen will request from the user the city in which their desired property is located.
+    * This screen will request from the user the zip or city and state in which their desired property is located.
+    * Acceptable values:
+      * A five digit zip code
+      * A string of letters (as well as dashes/periods) with a comma, space and two more characters, no more than 20 characters in length
+      * I.E.
+        * 94111
+        * St. George, UT
+        * San Francisco, CA
+    * Error Message:
+      * 'This field requires a City Name (letters, periods and dashes allowed) and a State abbreviation (separated by a comma, no longer than 30 characters) or a 5 digit zip code.  i.e. "94111" and "San Francisco, CA"'
   4. Property purchase screen
     * This screen will discover how the property will be utilized by the customer
     * Acceptable values include:
@@ -112,6 +124,14 @@
        * 1000.00
        * $1000
        * 1000
+       * $1,000.00
+       * $1,000
+       * 1,000.00
+       * 1,000
+    * Down payment cannot be MORE than purchase price.
+    * Possible Error Messages:
+      * 'The price needs to be a valid dollar amount, greater than $0, and no less than the down payment.'
+      * 'The down payment needs to be a valid dollar amount, though it can be $0.'
   8. Credit score estimation
     * This screen will request an estimate of the user's credit score.
     * Acceptable values include:
@@ -122,22 +142,52 @@
   9. Bankruptcy / foreclosure info request screen
     * This screen will request the user's bankruptcy and foreclosure history in the last 7 years.
     * Acceptable responses include:
-      * No
+      * Neither
       * Bankruptcy
       * Foreclosure
       * Both
+    * Formatted on the result screen, they will appear as the following (in the same order as the responses listed above):
+      * Has never been in bankruptcy
+      * Has had bankruptcy before
+      * Has had a foreclosure before
+      * Has had both a foreclosure and a bankruptcy
   10. Current address request screen
     * This screen is to check the user's current address
     * The response should be first line: street address, second line: street address cont'd, third line: city, state, and zip.
+    * Acceptable responses include:
+      * No more than 50 characters on any line
+      * At least 5 characters on the first line
+      * The second line is optional
+      * The last line will need to reflect the pattern below
+        * xxxxxx, xx 00000
+        * before the comma, x is any number of letters periods and dashes, at least 1
+        * after the comma is a space and a state abbreviation
+        * this is followed by one more space and a combination of any 5 numbers
+    * Possible Error Messages
+      * 'The first line of the address can only be between 5 and 50 characters long.'
+      * 'The second line of the address can only be 50 characters long.'
+      * 'The last line must follow a standard city, state zip format (San Francisco, CA 94111), with a valid state abbreviation.  It also can be no longer than 50 characters total.'
   11. User information request screen
     * This screen will get contact information from the user
     * Acceptable responses include:
-      * First Name - free text entry
-      * Last Name - free text entry
+      * First Name - 1-30 characters
+      * Last Name - 1-30 characters
       * email - verified email entry
         * x@x.x where 'x' can be any number of letters/numbers
+        * No more than 50 characters total
+    * On the summary screen, first name and last name will be concatenated.
+      * FirstName - AJ
+      * LastName - Larson
+      * Summary Screen Name - AJ Larson
+    * Possible Error Messages
+      * 'The first name must be between 1 and 30 characters long.'
+      * 'The last name must be between 1 and 30 characters long.'
+      * 'The email address must follow standard email format (i.e. andy@gmail.com), and cannot exceed 50 characters in length.'
   12. Summary screen
     * This screen will show the user an overview of the information provided, and will allow them to submit the report, or to star the form over.
+
+  **Error Handling**
+  When errors are present in user inputs, a contextualized error message will display and the field(s) in error are highlighted.  Users are required to correct errors before proceeding.
 
   Once the submit button is selected, the form will be sent to the lenders' server for appropriate distribution within their systems.
 </details>
@@ -145,7 +195,7 @@
 ### Performance Requirements
 
 <details>
-  <summary>The page should load...</summary> in no longer than 3 seconds, and page transitions should take no longer th an 2 seconds, with 1 and 2 being the target and minimum thresholds respectively.
+  <summary>The app should load...</summary> in no longer than 3 seconds.  Once the base application has loaded the page transitions should take no longer than 2 seconds, though our target is no more than 1 second.
 </details>
 
 ## Project Stakeholders
@@ -153,9 +203,7 @@
 ### Development
 
 <details>
-  <summary>
-  Team members
-  </summary>
+  <summary>Team members</summary>
 
   Development Manager: Bob
 
@@ -178,6 +226,7 @@
 <summary>Team members</summary>
 
   Team lead: Anne
+
   Analyst: Frank
 </details>
 
@@ -191,6 +240,50 @@
   Agent: Marlene
 </details>
 
+## Change Logs
+
+<details>
+
+<summary> Version 1.5 </summary>
+
+**Bugs Fixed**
+* Version number added to home screen
+* City Name updated to Location, given clearer requirements
+* Phrasing in dropdowns and on various screens updated
+  1. Loan Type: "Home Equity Loan/Line of Credit"
+  1. Property Type: "Town Home"
+  1. Location Prompt: "In what city and state or zip code are you looking for property?"
+  1. Credit History Option: "No" changed to "Neither"
+  1. Credit History Values: Updated to reflect the 7 year period (Has had/has not been in) rather than indefinite (never/before, etc)
+  1. Current Address Prompt: "What is your current mailing address?"
+  1. Summary Screen Labels: Updated to be labels, rather than copied prompts
+* Output for Agent and Property found screens changed to match buttons: Yes/No instead of the True/False it was outputting
+* Added error handling
+* Placeholder text in input fields updated
+* When "starting over", all fields are reset
+  * Button to start over renamed to "Start Over" from "Start Again"
+
+**Readme Updates**
+* Clarified differences between inputs on various pages and expected outputs on the summary
+  * Names
+  * Credit History
+* Added field limits/requirements
+  * City Name / Location
+  * Address
+  * Name
+  * Email
+* Updated requirements
+  * Purchase price & Down payment fields
+    * Decimal Points
+    * Commas
+* Error Handling Mentioned
+* README project title updated
+* Typos fixed
+
+**Other Updates**
+* Added selectors for the Summary Screen field headers
+
+</details>
 
 ## Contributions
 

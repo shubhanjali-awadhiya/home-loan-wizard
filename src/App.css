@@ -80,3 +80,20 @@ button{
 .overarching-div:nth-child(2n){
   background-color: lightgrey;
 }
+.nextButton{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.errorMessage{
+  font-size: 1em;
+  color: #AA0000
+}
+.invalid{
+  border: 1px solid #AA0000
+}
+.hidden{
+  display: none
+}
