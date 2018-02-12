@@ -15,7 +15,7 @@ class WizardEleven extends Component {
                     <div >
 
                         <div className="overarching-div">
-                            <div className="form" >Name: 
+                            <div className="form" name="nameLabel">Full Name: 
                                 <p className="name p2">
                                     {this.props.firstName} {this.props.lastName}
                                 </p>
@@ -23,7 +23,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Email: 
+                            <div className="form" name="emailLabel">Email: 
                                 <p className="email p2">
                                   {this.props.email}
                                 </p>
@@ -31,7 +31,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >What type of loan will you be needing?: 
+                            <div className="form" name="loanTypeLabel">Loan Type: 
                                 <p className="loanType p2">
                                     {this.props.loanType}
                                 </p> 
@@ -39,7 +39,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >What type of property are you purchasing?: 
+                            <div className="form" name="propertyTypeLabel">Property Type: 
                                 <p className="propertyType p2">
                                     {this.props.propertyType}
                                 </p>
@@ -47,7 +47,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >In what city will the property be located?: 
+                            <div className="form" name="cityLabel">Property Location: 
                                 <p className="city p2"> 
                                     {this.props.city}
                                 </p>
@@ -55,7 +55,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Type of property the loan is applied to:
+                            <div className="form" name="propertyPurposeLabel">Purchase Reason:
                                 <p className="propertyPurpose p2">
                                     {this.props.propToBeUsedOn}
                                 </p> 
@@ -63,7 +63,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Have you already found your new home?: 
+                            <div className="form" name="foundLabel">Property Already Located: 
                                 <p className="found p2">
                                     {this.props.found}
                                 </p>
@@ -71,7 +71,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Currently working with a real estate agent?: 
+                            <div className="form" name="agentLabel">Agent Already Engaged: 
                                 <p className="agent p2">
                                     {this.props.realEstateAgent}
                                 </p>
@@ -79,7 +79,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Estimated purchase price of the home: 
+                            <div className="form" name="priceLabel">Estimated Price of Property: 
                                 <p className="price p2">
                                     {this.props.cost}
                                 </p>
@@ -87,7 +87,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Down payment: 
+                            <div className="form" name="downPaymentLabel">Estimated Down Payment: 
                                 <p className="downPayment p2">
                                     {this.props.downPayment}
                                 </p>
@@ -95,7 +95,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Credit score: 
+                            <div className="form" name="creditScoreLabel">Credit Score: 
                                 <p className="creditScore p2"> 
                                     {this.props.credit}
                                 </p>
@@ -103,7 +103,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Bankruptcy history: 
+                            <div className="form" name="creditScoreLabel">Credit History: 
                                 <p className="creditHistory p2">
                                     {this.props.history}
                                 </p>
@@ -111,7 +111,7 @@ class WizardEleven extends Component {
                         </div>
 
                         <div className="overarching-div">
-                            <div className="form" >Current Address: 
+                            <div className="form" name="addressLabel">Current Address: 
                                 <p className="p2">
                                     <span id="addressOne" >{this.props.addressOne}</span> <br />
                                     <span id="addressTwo" >{this.props.addressTwo}</span> <br />
@@ -124,7 +124,7 @@ class WizardEleven extends Component {
                 </div>
                <div className="row">
                     <Link to="/finish"> <button name="sendButton">Send</button></Link>
-                    <Link to="/"> <button name="restartButton">Start Again</button></Link>
+                    <Link to="/"> <button name="restartButton">Start Over</button></Link>
                </div>
             </div>
 

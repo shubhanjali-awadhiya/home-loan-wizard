@@ -10,6 +10,7 @@ class NextBtn extends Component {
                     <Link to="/wOne" >
                         <button name="nextButton" className="home-btn">Get Started</button>
                     </Link>
+                    <h6 name="versionNumber">Version 1.5</h6>
                 </div>
             </div>
         )
