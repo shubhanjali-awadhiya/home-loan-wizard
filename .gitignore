@@ -8,7 +8,6 @@
 /tests_output
 nightwatchProps.js
 nightwatch.conf.js
-/nightwatch
 selenium-debug.log
 
 # production

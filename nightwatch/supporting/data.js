@@ -3,7 +3,7 @@ module.exports = {
         test_1: {
             loanType: 'homePurchase',
             propertyType: 'singleFamilyHome',
-            cityName: 'Boston',
+            cityName: 'Boston, MA',
             propertyPurpose: 'primaryHome',
             newHome: 'yes',
             realEstateAgent: 'yes',
@@ -11,7 +11,7 @@ module.exports = {
             downPayment: '20000',
             creditScore: 'excellent',
             bankruptcyHistory: 'no',
-            addressLine1: '1234',
+            addressLine1: '12345',
             addressLine2: 'S Fox Ln',
             addressLine3: 'Boston, MA 02101',
             firstName: 'David',
@@ -21,16 +21,16 @@ module.exports = {
             emailOutput: 'david.escle@gmail.com',
             loanTypeOutput: 'Home Purchase',
             propertyTypeOutput: 'Single Family Home',
-            cityOutput: 'Boston',
+            cityOutput: 'Boston, MA',
             propertyPurposeOutput: 'Primary Home',
-            newHomeOutput: 'True',//yes
-            realEstateAgentOutput: 'True',//yes
+            newHomeOutput: 'Yes',
+            realEstateAgentOutput: 'Yes',
             estimatePurchasePriceOutput: '100000',
             downPaymentOutput: '20000',
             creditScoreOutput: 'Excellent',
-            bankruptcyHistoryOutput: 'Has never been in bankruptcy',//no
+            bankruptcyHistoryOutput: 'Has not been in bankruptcy or foreclosure',//no
             currentAddressOutput: {
-                lineOne: '1234',
+                lineOne: '12345',
                 lineTwo: 'S Fox Ln',
                 lineThree: 'Boston, MA 02101'
             }
@@ -38,7 +38,7 @@ module.exports = {
         test_2: {
             loanType: 'refinance',
             propertyType: 'townHome',
-            cityName: 'Washington',
+            cityName: 'Provo, UT',
             propertyPurpose: 'rentalProperty',
             newHome: 'no',
             realEstateAgent: 'no',
@@ -46,7 +46,7 @@ module.exports = {
             downPayment: '30000',
             creditScore: 'good',
             bankruptcyHistory: 'bankruptcy',
-            addressLine1: '5678',
+            addressLine1: '56789',
             addressLine2: 'N mad ln',
             addressLine3: 'Paris, FR 75000',
             firstName: 'Scrapy',
@@ -56,19 +56,60 @@ module.exports = {
             emailOutput: 'scrapyandrew@live.com',
             loanTypeOutput: 'Refinance',
             propertyTypeOutput: 'Town Home',
-            cityOutput: 'Washington',
+            cityOutput: 'Provo, UT',
             propertyPurposeOutput: 'Rental Property',
-            newHomeOutput: 'False',//no
-            realEstateAgentOutput: 'False',//no
+            newHomeOutput: 'No',
+            realEstateAgentOutput: 'No',
             estimatePurchasePriceOutput: '10000000',
             downPaymentOutput: '30000',
             creditScoreOutput: 'Good',
-            bankruptcyHistoryOutput: 'Has had bankruptcy before',//banruptcy
+            bankruptcyHistoryOutput: 'Has had bankruptcy',
             currentAddressOutput: {
-                lineOne: '5678',
+                lineOne: '56789',
                 lineTwo: 'N mad ln',
                 lineThree: 'Paris, FR 75000'
             }
         }
-    }
+        
+        },
+        badData : {
+            test_3: {
+                loanType: 'homeEquityLoanLine',
+                propertyType: 'condo',
+                cityName: 'Boston, MA',
+                propertyPurpose: 'secondaryHome',
+                newHome: 'yes',
+                realEstateAgent: 'yes',
+                estimatePurchasePrice: '220000',
+                downPayment: '2000',
+                estimatePurchasePrice1:'220000',
+                downPayment1:'2000',
+                creditScore: 'fair',
+                bankruptcyHistory: 'foreclosure',
+                addressLine1: '56789',
+                addressLine2: 'N mad ln',
+                addressLine3: 'Paris, FR 75000',
+                firstName: 'Scrapy',
+                lastName: 'Andrew',
+                email: 'scrapyandrew@live.com',
+                nameOutput: 'Scrapy Andrew',
+                emailOutput: 'scrapyandrew@live.com',
+                loanTypeOutput: 'Home Equity',
+                propertyTypeOutput: 'Condo',
+                cityOutput: 'Boston, MA',
+                propertyPurposeOutput: 'Secondary Home',
+                newHomeOutput: 'Yes',
+                realEstateAgentOutput: 'Yes',
+                estimatePurchasePriceOutput: '220000',
+                downPaymentOutput: '2000',
+                creditScoreOutput: 'Fair',
+                bankruptcyHistoryOutput: 'Has had a foreclosure',
+                currentAddressOutput: {
+                    lineOne: '56789',
+                    lineTwo: 'N mad ln',
+                    lineThree: 'Paris, FR 75000' 
+        }
+        }
+    
+}
 }

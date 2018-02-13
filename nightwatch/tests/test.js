@@ -15,9 +15,10 @@ module.exports = {
     },
     'Test 2 with good data': function(browser) {
         functions.goodDataTest1(browser, data.goodData.test_2)
+    },
+    'Test 3 with bad data': function(browser) {
+        functions.badData(browser, data.badData.test_3)
     }
-    
-    // 'Test 2 with bad data': function
 
 
     }
